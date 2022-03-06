@@ -14,6 +14,7 @@ buildscript {
         classpath("junit:junit:4.11")
         classpath("au.com.dius:pact-jvm-consumer-junit_2.11:2.1.12")
         classpath("org._10ne.gradle:rest-gradle-plugin:0.4.2")
+        classpath("ch.qos.logback:logback-classic:1.1.7")
     }
 }
 
@@ -24,19 +25,21 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
-    testCompile group: 'joda-time', name: 'joda-time', version: '2.3'
-    testCompile group: 'org.apache.commons', name: 'commons-collections4', version: '4.0'
-    testCompile group: 'au.com.dius', name: 'pact-jvm-consumer-junit_2.11', version: '2.1.12'
+    testImplementation group: 'junit', name: 'junit', version: '4.11'
+    testImplementation group: 'joda-time', name: 'joda-time', version: '2.3'
+    testImplementation group: 'org.apache.commons', name: 'commons-collections4', version: '4.0'
+    testImplementation group: 'au.com.dius', name: 'pact-jvm-consumer-junit_2.11', version: '2.1.12'
+    implementation 'ch.qos.logback:logback-classic:1.1.7'
 }
 
 test {
     systemProperties['pact.rootDir'] = PACT_DIR
 }
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = '11'
+targetCompatibility = '11'
 
+/*
 task wrapper(type: Wrapper) {
     gradleVersion = '2.1'
-}
+}*/

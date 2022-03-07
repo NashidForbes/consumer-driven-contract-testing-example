@@ -15,11 +15,11 @@
     "response" : {
       "status" : 200,
       "headers" : {
-        "Content-Type" : "application/json;charset=UTF-8"
+        "Content-Type" : "application/json"
       },
       "body" : {
-        "id" : 4764183456,
-        "content" : "pBQPshBMZSVXWAkpcrKa"
+        "id" : 6492984897,
+        "content" : "HnfKYwBEgySAgNOsXwvU"
       },
       "responseMatchingRules" : {
         "$.body.id" : {
